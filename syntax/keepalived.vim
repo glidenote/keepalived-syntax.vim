@@ -9,57 +9,81 @@ setlocal iskeyword+=.
 setlocal iskeyword+=/
 setlocal iskeyword+=:
 
-syn region kpaBlock start=+^+ end=+{+ contains=kpaComment,kpaDirectiveBlock,kpaDirectiveImportant oneline
-syn match kpaComment ' *#.*$'
+syn region keepalivedBlock start=+^+ end=+{+ contains=keepalivedComment,keepalivedDefinitionBlock,keepalivedDefinitionImportant,keepalivedDefinition oneline
+syn match keepalivedComment ' *#.*$'
 
-syn keyword kpaBoolean on
-syn keyword kpaBoolean off
+syn keyword keepalivedBoolean on
+syn keyword keepalivedBoolean off
 
-syn keyword kpaDirectiveBlock global_defs         contained
-syn keyword kpaDirectiveBlock vrrp_instance       contained
-syn keyword kpaDirectiveBlock virtual_server      contained
-syn keyword kpaDirectiveBlock HTTP_GET            contained
-syn keyword kpaDirectiveBlock SSL_GET             contained
+syn keyword keepalivedDefinitionBlock global_defs         contained
+syn keyword keepalivedDefinitionBlock virtual_server      contained
+syn keyword keepalivedDefinitionBlock fwmark              contained
+syn keyword keepalivedDefinitionBlock vrrp_sync_group     contained
+syn keyword keepalivedDefinitionBlock vrrp_instance       contained
 
-syn keyword kpaDirectiveImportant notification_email
-syn keyword kpaDirectiveImportant virtual_ipaddress
-syn keyword kpaDirectiveImportant real_server
-syn keyword kpaDirectiveImportant sorry_server
-syn keyword kpaDirectiveImportant authentication 
-syn keyword kpaDirectiveImportant url 
+syn keyword keepalivedDefinitionImportant notification_email
+syn keyword keepalivedDefinitionImportant notification_email_from
+syn keyword keepalivedDefinitionImportant smtp_server
+syn keyword keepalivedDefinitionImportant smtp_connect_timeout
+syn keyword keepalivedDefinitionImportant lvs_id
+syn keyword keepalivedDefinitionImportant delay_loop
+syn keyword keepalivedDefinitionImportant lb_algo
+syn keyword keepalivedDefinitionImportant lb_kind
+syn keyword keepalivedDefinitionImportant persistence_timeout
+syn keyword keepalivedDefinitionImportant persistence_granularity
+syn keyword keepalivedDefinitionImportant virtualhost
+syn keyword keepalivedDefinitionImportant protocol
+syn keyword keepalivedDefinitionImportant sorry_server
+syn keyword keepalivedDefinitionImportant real_server
+syn keyword keepalivedDefinitionImportant state
+syn keyword keepalivedDefinitionImportant interface
+syn keyword keepalivedDefinitionImportant mcast_src_ip
+syn keyword keepalivedDefinitionImportant lvs_sync_daemon_inteface
+syn keyword keepalivedDefinitionImportant virtual_router_id
+syn keyword keepalivedDefinitionImportant priority
+syn keyword keepalivedDefinitionImportant advert_int
+syn keyword keepalivedDefinitionImportant smtp_alert
+syn keyword keepalivedDefinitionImportant authentication
+syn keyword keepalivedDefinitionImportant virtual_ipaddress
+syn keyword keepalivedDefinitionImportant virtual_ipaddress_excluded
+syn keyword keepalivedDefinitionImportant notify_master
+syn keyword keepalivedDefinitionImportant notify_backup
+syn keyword keepalivedDefinitionImportant notify_fault
+syn keyword keepalivedDefinitionImportant vrrp_sync_group
 
-syn keyword kpaDirective notification_email_from
-syn keyword kpaDirective smtp_server
-syn keyword kpaDirective smtp_connect_timeout
-syn keyword kpaDirective router_id
-syn keyword kpaDirective state
-syn keyword kpaDirective interface
-syn keyword kpaDirective virtual_router_id
-syn keyword kpaDirective priority
-syn keyword kpaDirective advert_int
-syn keyword kpaDirective delay_loop
-syn keyword kpaDirective lb_algo
-syn keyword kpaDirective lb_kind
-syn keyword kpaDirective nat_mask
-syn keyword kpaDirective persistence_timeout
-syn keyword kpaDirective protocol
-syn keyword kpaDirective weight
-syn keyword kpaDirective connect_timeout
-syn keyword kpaDirective nb_get_retry
-syn keyword kpaDirective delay_before_retry
+syn keyword keepalivedDefinition weight
+syn keyword keepalivedDefinition TCP_CHECK
+syn keyword keepalivedDefinition MISC_CHECK
+syn keyword keepalivedDefinition HTTP_GET
+syn keyword keepalivedDefinition SSL_GET
+syn keyword keepalivedDefinition url
+syn keyword keepalivedDefinition connect_port
+syn keyword keepalivedDefinition connect_timeout
+syn keyword keepalivedDefinition nb_get_retry
+syn keyword keepalivedDefinition delay_before_retry
+syn keyword keepalivedDefinition router_id
+syn keyword keepalivedDefinition state
+syn keyword keepalivedDefinition interface
+syn keyword keepalivedDefinition virtual_router_id
+syn keyword keepalivedDefinition priority
+syn keyword keepalivedDefinition advert_int
+syn keyword keepalivedDefinition nat_mask
+syn keyword keepalivedDefinition auth_type
+syn keyword keepalivedDefinition auth_pass
 
-syn keyword kpaVariable  path
-syn keyword kpaVariable  digest
+syn keyword keepalivedVariable  misc-path
+syn keyword keepalivedVariable  path
+syn keyword keepalivedVariable  digest
 
 " highlight
-hi link kpaComment Comment
-hi link kpaVariable PreProc
-hi link kpaBlock Normal
-hi link kpaString String
+hi link keepalivedComment Comment
+hi link keepalivedVariable PreProc
+hi link keepalivedBlock Normal
+hi link keepalivedString String
 
-hi link kpaBoolean Boolean
-hi link kpaDirectiveBlock Statement
-hi link kpaDirectiveImportant Type
-hi link kpaDirective Identifier
+hi link keepalivedBoolean Boolean
+hi link keepalivedDefinitionBlock Statement
+hi link keepalivedDefinitionImportant Type
+hi link keepalivedDefinition Identifier
 
 let b:current_syntax = "keepalived"
