@@ -9,8 +9,12 @@ setlocal iskeyword+=.
 setlocal iskeyword+=/
 setlocal iskeyword+=:
 
-syn region keepalivedBlock start=+^+ end=+{+ contains=keepalivedComment,keepalivedDefinitionBlock,keepalivedDefinitionImportant,keepalivedDefinition oneline
-syn match keepalivedComment ' *#.*$'
+syn match   keepalivedDelimiter   "[{}()\[\];,]"
+syn match   keepalivedOperator    "[~!=|&\*\+\<\>]"
+syn match   keepalivedComment     "\(#.*\)"
+syn match   keepalivedNumber      "[-+]\=\<\d\+\(\.\d*\)\=\>"
+syn region  keepalivedString      start=+"+ skip=+\\"+ end=+"+
+syn region  keepalivedBlock start=+^+ end=+{+ contains=keepalivedComment,keepalivedDefinitionBlock,keepalivedDefinitionImportant,keepalivedDefinition oneline
 
 syn keyword keepalivedBoolean on
 syn keyword keepalivedBoolean off
@@ -76,14 +80,18 @@ syn keyword keepalivedVariable  path
 syn keyword keepalivedVariable  digest
 
 " highlight
-hi link keepalivedComment Comment
-hi link keepalivedVariable PreProc
-hi link keepalivedBlock Normal
-hi link keepalivedString String
+hi link keepalivedDelimiter           Delimiter
+hi link keepalivedOperator            Operator
+hi link keepalivedComment             Comment
+hi link keepalivedNumber              Number
+hi link keepalivedComment             Comment
+hi link keepalivedVariable            PreProc
+hi link keepalivedBlock               Normal
+hi link keepalivedString              String
 
-hi link keepalivedBoolean Boolean
-hi link keepalivedDefinitionBlock Statement
+hi link keepalivedBoolean             Boolean
+hi link keepalivedDefinitionBlock     Statement
 hi link keepalivedDefinitionImportant Type
-hi link keepalivedDefinition Identifier
+hi link keepalivedDefinition          Identifier
 
 let b:current_syntax = "keepalived"
