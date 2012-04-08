@@ -10,7 +10,7 @@ add this line to your `.vimrc`
 
 ## Install
 
-Copy it to your plugin and autoload directory.
+Copy it to your syntax directory.
 
 ## License
 
