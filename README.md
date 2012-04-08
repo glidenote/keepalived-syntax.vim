@@ -2,6 +2,10 @@
 
 syntax highlighting for [Keepalived](http://www.keepalived.org/) config files.
 
+![](http://blog.glidenote.com/images2/2012/04/keepalived0.png)
+
+![](http://blog.glidenote.com/images2/2012/04/keepalived1.png)
+
 ## Setup
 
 add this line to your `.vimrc`
