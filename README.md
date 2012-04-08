@@ -2,7 +2,11 @@
 
 syntax highlighting for [Keepalived](http://www.keepalived.org/) config files.
 
+syntax off
+
 ![](http://blog.glidenote.com/images2/2012/04/keepalived0.png)
+
+syntax on
 
 ![](http://blog.glidenote.com/images2/2012/04/keepalived1.png)
 
