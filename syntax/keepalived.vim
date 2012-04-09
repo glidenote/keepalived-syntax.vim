@@ -36,6 +36,8 @@ syn keyword keepalivedDefinitionImportant lvs_id
 syn keyword keepalivedDefinitionImportant delay_loop
 syn keyword keepalivedDefinitionImportant lb_algo
 syn keyword keepalivedDefinitionImportant lb_kind
+syn keyword keepalivedDefinitionImportant lvs_sched
+syn keyword keepalivedDefinitionImportant lb_method
 syn keyword keepalivedDefinitionImportant persistence_timeout
 syn keyword keepalivedDefinitionImportant persistence_granularity
 syn keyword keepalivedDefinitionImportant virtualhost
