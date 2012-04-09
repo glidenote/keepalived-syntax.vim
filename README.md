@@ -14,7 +14,7 @@ syntax on
 
 add this line to your `.vimrc`
 
-    au BufRead,BufNewFile keepalived.conf set ft=keepalived
+    au BufRead,BufNewFile keepalived.conf setlocal ft=keepalived
 
 ## Install
 
